@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Contact Form</title>
+</head>
+<body>
+  <main>
+    <form id="contactForm" novalidate>
+      <h2 id="formTitle">Contact Us</h2>
+
+      <!-- Name Fields -->
+      <fieldset class="name-fields">
+        <div class="form-group">
+          <label for="firstName">First Name <span aria-hidden="true">*</span></label>
+          <input 
+            type="text" 
+            id="firstName" 
+            name="firstName" 
+            placeholder="Enter your first name" 
+            required 
+            aria-describedby="firstNameError">
+          <span id="firstNameError"  class="error-message" role="alert" aria-live="assertive" hidden>
+            This field is required
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name <span aria-hidden="true">*</span></label>
+          <input 
+            type="text" 
+            id="lastName" 
+            name="lastName" 
+            placeholder="Enter your last name" 
+            required 
+            aria-describedby="lastNameError">
+          <span id="lastNameError"  class="error-message" role="alert" aria-live="assertive" hidden>
+            This field is required
+          </span>
+        </div>
+      </fieldset>
+
+      <!-- Email Field -->
+      <fieldset class="email-field">
+        <div class="form-group">
+          <label for="email">Email Address <span aria-hidden="true">*</span></label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            placeholder="Enter your email address" 
+            required 
+            aria-describedby="emailError validEmailError">
+          <span id="validEmailError" class="error-message" role="alert" aria-live="assertive" hidden>
+            Please enter a valid email address
+          </span>
+          <span id="emailError" class="error-message" role="alert" aria-live="assertive" hidden>
+            This field is required
+          </span>
+        </div>
+      </fieldset>
+
+      <!-- Query Type -->
+      <fieldset class="query-type">
+        <label for="query" class="query-label">Query Type <span aria-hidden="true">*</span></label>
+        <div class="form-group" >
+          <div>
+            <input 
+              type="radio" 
+              id="queryGeneral" 
+              name="queryType" 
+              value="general" 
+              required>
+            <label for="queryGeneral">General Enquiry</label>
+          </div>
+          <div>
+            <input 
+              type="radio" 
+              id="querySupport" 
+              name="queryType" 
+              value="support">
+            <label for="querySupport">Support Request</label>
+          </div>
+          <span id="queryError" class="error-message" role="alert" aria-live="assertive" hidden>
+            Please select a query type
+          </span>
+        </div>
+      </fieldset>
+
+      <!-- Message Field -->
+      <fieldset class="message-field" >
+        <div class="form-group">
+          <label for="message">Message <span aria-hidden="true">*</span></label>
+          <textarea 
+            id="message" 
+            name="message" 
+            placeholder="Enter your message here" 
+            required 
+            aria-describedby="messageError"></textarea>
+          <span id="messageError" class="error-message" role="alert" aria-live="assertive" hidden>
+            This field is required
+          </span>
+        </div>
+      </fieldset>
+
+      <!-- Consent Checkbox -->
+      <fieldset class="consent-field">
+        <div class="form-group">
+          <input 
+            type="checkbox" 
+            id="consent" 
+            name="consent"
+            required 
+            aria-describedby="consentError">
+          <label for="consent">I consent to being contacted by the team</label>
+          <span id="consentError" class="error-message" role="alert" aria-live="assertive" hidden>
+            To submit this form, please consent to being contacted
+          </span>
+        </div>
+      </fieldset>
+
+      <button type="submit" id="submit">Submit</button>
+    </form>
+
+    <!-- Success Message (hidden by default) -->
+    <article id="successMessage" class="success-message" aria-live="polite" hidden>
+      <div class="success-icon">
+        <img src="assets/images/success.svg" alt="Success Icon">
+        <p>Message Sent!</p>
+      </div>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </article>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
